@@ -35,4 +35,4 @@ class RootWithChildCategoryTagShop(InclusionTag):
     def get_context(self, context):
         return {'categories': Category.objects.root_categories(),}
 
-register.tag(RootWithChildCategoryTag)
+register.tag(RootWithChildCategoryTagShop)
