@@ -26,3 +26,13 @@ class RootWithChildCategoryTag(InclusionTag):
         return {'categories': Category.objects.root_categories(),}
 
 register.tag(RootWithChildCategoryTag)
+
+
+class RootWithChildCategoryTagShop(InclusionTag):
+    template = 'shop_simplecategories/show_root_with_child_categories_shop.html'
+    name = 'show_root_with_child_categories_shop'
+
+    def get_context(self, context):
+        return {'categories': Category.objects.root_categories(),}
+
+register.tag(RootWithChildCategoryTag)

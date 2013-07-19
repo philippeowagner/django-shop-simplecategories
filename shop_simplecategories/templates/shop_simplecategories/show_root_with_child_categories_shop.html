@@ -1,0 +1,14 @@
+{% for category in categories %}
+	<li id="shop_category_{{ category.id }}">
+		<a class="invarseColor" href="{{ category.get_absolute_url }}">{{ category.name }}</a> 
+		{% if category.get_child_categories %}
+		<ul class="submenu">
+			{% for child_category in category.get_child_categories %}
+			<li id="shop_category_{{ category.id }}_{{ child_category.id }}">
+				<a class="invarseColor" href="{{ child_category.get_absolute_url }}">{{ child_category.name }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</li>
+{% endfor %}
