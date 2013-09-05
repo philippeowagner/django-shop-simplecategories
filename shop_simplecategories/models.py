@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 class CategoryManager(models.Manager):
     def root_categories(self):
-        return self.filter(parent_category__isnull=True)
+        return self.filter(parent_category__isnull=True).order_by('name')
 
 
 class Category(models.Model):
