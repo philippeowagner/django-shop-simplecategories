@@ -52,4 +52,4 @@ class Category(models.Model):
         return self.products.all()
 
     def get_child_categories(self):
-        return Category.objects.filter(parent_category=self)
+        return Category.objects.filter(parent_category=self).order_by('name')
